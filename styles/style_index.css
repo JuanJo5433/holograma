@@ -1,0 +1,272 @@
+/* Configuración básica para el cuerpo del documento */
+body {
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+    overflow: hidden; /* Oculta el contenido que se desborde del cuerpo */
+    box-sizing: border-box;
+    background-size: cover;
+
+}
+
+/* Configuración global para todos los elementos */
+* {
+    transition: 300ms; /* Agrega una transición de 300 milisegundos a todas las propiedades animables */
+    margin: 0; /* Elimina los márgenes predeterminados para todos los elementos */
+    padding: 0; /* Elimina los rellenos predeterminados para todos los elementos */
+    font-family: 'Arimo', Arial, sans-serif; /* Define la fuente predeterminada para todos los elementos */
+}
+
+#video{
+    background-size: cover;
+            
+}
+
+/* Estilo SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #3943f7;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #000737; 
+}
+/* Estilo para listas desordenadas */
+ul {
+    list-style: none; /* Elimina los marcadores de lista predeterminados */
+}
+
+/* Estilo para enlaces */
+a {
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+}
+
+/* Estilo para enlaces al pasar el ratón por encima */
+a:hover {
+    color: #6ABCEA; /* Cambia el color del texto al pasar el ratón por encima del enlace */
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    position: relative; /* Define la posición relativa para poder posicionar otros elementos en relación con este contenedor */
+    width: 100%; /* Establece el ancho del contenedor al 100% del ancho disponible */
+    height: 100vh; /* Establece la altura del contenedor al 100% del alto disponible (viewport height) */
+}
+
+/* Estilo para el video de la portada */
+.main-cover {
+    position: absolute; /* Permite posicionar el video de forma absoluta en relación con el contenedor principal */
+    top: 0; /* Coloca el video en la parte superior del contenedor */
+    left: 0; /* Coloca el video en la parte izquierda del contenedor */
+    width: 100%; /* Establece el ancho del video al 100% del contenedor */
+    height: 100%; /* Establece la altura del video al 100% del contenedor */
+    z-index: -1; /* Coloca el video detrás de otros elementos, como el contenido */
+}
+
+/* Estilo para el video en sí */
+#video {
+    width: 100%; /* Establece el ancho del video al 100% del contenedor */
+    height: 100vh; /* Establece la altura del video al 100% del alto disponible (viewport height) */
+    object-fit: cover; /* Escala el video para que cubra todo el contenedor manteniendo la relación de aspecto */
+}
+
+/* NAVEGACION */
+.nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #010313;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom:0 ;
+    width: 100%;
+    height: 40px;
+    z-index: 999;
+    transition: all 0.3s ease; /* Animación de transición */
+    
+}
+
+
+.logo a {
+    font-size: 34px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    margin-right: 30px;
+    
+}
+
+.menu-icon .nav-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.2s ease-in-out;
+    left: 200px;
+    
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+
+.menu li {
+    list-style: none;
+    padding: 0 20px;
+    
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative; /* Agregamos posición relativa para los enlaces */
+    top: 13px;
+}
+.menu li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: #6ABCEA;
+    transition: width 0.2s ease; /* Animación de la línea */
+}
+
+.menu li a:hover::after {
+    width: 100%; /* La línea crecerá hasta cubrir el ancho del enlace */
+}
+
+  
+
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0076ff;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #45A7D7;
+    color: #151838;
+}
+/* Media query para pantalla pequeña */
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto; /* Permite el desplazamiento en pantallas pequeñas */
+    }
+
+
+    .menu {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 200px;
+        background-color: #333;
+        z-index: 998;
+    }
+
+    .menu.active li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #555;
+    }
+
+    /* Animación del ícono de tres rayas al abrir el menú */
+    .menu-icon.active .nav-icon:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-icon.active .nav-icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active .nav-icon:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+
+/* Estilo para el contenido */
+.content {
+    padding: 20px; /* Establece el relleno del contenido */
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho y alto del contenido */
+    position: relative; /* Permite posicionar otros elementos en relación con el contenido */
+    z-index: 1; /* Establece una capa z-index para asegurarse de que el contenido esté por encima del video */
+}
+
+
+
+
+/* Estilo para el texto "PELISMARK" con efecto glitch */
+.glitch-text {
+    position: absolute; /* Permite posicionar el texto de forma absoluta en relación con el contenedor */
+    top: 50%; /* Posición vertical del texto desde la parte superior del contenedor */
+    left: 50%; /* Posición horizontal del texto desde la izquierda del contenedor */
+    transform: translate(-50%, -50%); /* Centra el texto horizontal y verticalmente en el contenedor */
+    font-size: 4rem; /* Establece el tamaño de fuente del texto */
+    font-weight: bold; /* Establece el grosor de fuente como negrita */
+    color: #ffffff; /* Establece el color del texto a azul */
+    opacity: 0.8; /* Establece la opacidad del texto */
+    animation: glitch 5s infinite; /* Agrega la animación de glitch al texto con una duración de 5 segundos y en bucle infinito */
+}
+
+/* Animación de glitch para el texto */
+@keyframes glitch {
+    0% {
+        transform: translate(-50%, -50%) translateZ(0); /* Establece la posición inicial del texto */
+        opacity: 0.8; /* Establece la opacidad inicial del texto */
+    }
+    25% {
+        transform: translate(-50%, -50%) translateX(-5px) translateY(5px) translateZ(0); /* Desplaza el texto hacia la izquierda y hacia abajo */
+        opacity: 0.6; /* Cambia la opacidad del texto */
+    }
+    50% {
+        transform: translate(-50%, -50%) translateX(5px) translateY(-5px) translateZ(0); /* Desplaza el texto hacia la derecha y hacia arriba */
+        opacity: 0.7; /* Cambia la opacidad del texto */
+    }
+    75% {
+        transform: translate(-50%, -50%) translateX(-5px) translateY(5px) translateZ(0); /* Desplaza el texto hacia la izquierda y hacia abajo */
+        opacity: 0.5; /* Cambia la opacidad del texto */
+    }
+    100% {
+        transform: translate(-50%, -50%) translateZ(0); /* Vuelve a la posición inicial del texto */
+        opacity: 0.8; /* Establece la opacidad final del texto */
+    }
+}

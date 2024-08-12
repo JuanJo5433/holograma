@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700');
+
+body {
+    font-family: 'Arimo', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ececec;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    gap: 50px;
+   
+    box-sizing: border-box;
+    background-image: url('../img/fondo.jpg');
+    background-size: cover;
+    background-position: center center; /* Centra la imagen de fondo horizontal y verticalmente */
+    
+}
+* {
+    transition: 300ms;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arimo', Arial, sans-serif;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+
+/* Estilo SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+    
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: rgba(4, 10, 63, 0.884);
+    
+    
+    
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #010313; 
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: #6ABCEA;
+}
+
+/* NAVEGACION */
+.nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #010313;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom:0 ;
+    width: 100%;
+    height: 60px;
+    z-index: 999;
+    transition: all 0.3s ease; /* Animación de transición */
+    
+}
+
+
+.logo a {
+    font-size: 34px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    
+    
+}
+
+.menu-icon .nav-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.2s ease-in-out;
+    left: 200px;
+    
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+
+.menu li {
+    list-style: none;
+    padding: 0 20px;
+    
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative; /* Agregamos posición relativa para los enlaces */
+    top: 13px;
+}
+.menu li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: #6ABCEA;
+    transition: width 0.2s ease; /* Animación de la línea */
+}
+
+.menu li a:hover::after {
+    width: 100%; /* La línea crecerá hasta cubrir el ancho del enlace */
+}
+
+
+
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0076ff;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #45A7D7;
+    color: #151838;
+}
+/* Media query para pantalla pequeña */
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto; /* Permite el desplazamiento en pantallas pequeñas */
+    }
+
+
+    .menu {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+  
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 200px;
+        background-color: #333;
+        z-index: 998;
+    }
+
+    .menu.active li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #555;
+    }
+
+    /* Animación del ícono de tres rayas al abrir el menú */
+    .menu-icon.active .nav-icon:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-icon.active .nav-icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active .nav-icon:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+.container{
+    display: flex;
+    justify-content: space-between; /* Alinea las tarjetas de manera uniforme */
+    max-width: 100%; /* Ancho máximo del contenedor */
+    padding: 20px; /* Espacio interior para separar las tarjetas del borde */
+}
+
+figure {
+    width: 100%;
+    aspect-ratio: 1;
+    margin: 0 0 60px;
+    padding: 5px 20px 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 100%;
+    cursor: pointer;
+    position: relative;
+    filter: drop-shadow(0 0 20px rgb(0 0 0/50%));
+}
+
+figure:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: top/cover;
+    transform-origin: bottom;
+    filter: brightness(.9);
+    transition: .5s;
+    
+}
+
+
+
+img {
+    grid-area: 1/1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: contrast(.8) brightness(.7);
+    place-self: end center;
+    transition: .5s;
+}
+
+figcaption {
+    font-size: 24px;
+    text-align: center;
+    place-self: end center;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-family: 'Arimo', Arial, sans-serif;
+    justify-content: flex-end; /* Coloca el texto al final de la tarjeta */
+    height: 100%; /* Ocupa todo el espacio vertical disponible */
+}
+
+    
+    
+    
+
+figure:hover img {
+    width: 180%;
+    height: 150%;
+    filter: contrast(1);
+
+}
+figure:hover::before {
+    filter: brightness(.3);
+    transform: perspective(500px) rotateX(60deg);
+
+}
+
+figure:hover figcaption {
+    transform: perspective(500px)translateY(100%) rotateX(-30deg);
+}
+.movie-card {
+    
+    
+    background: #000000;
+    
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, .1);
+    width: 100%;
+    max-width: 280px;
+    border-radius: 5px;
+    display: inline-block;
+    -webkit-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 18px 2px rgba(4, 10, 63, 0.884);
+    cursor: pointer;
+    margin-top: 15vh;
+    margin-right: 20px; /* Espacio entre las tarjetas */
+    
+
+}
+
+.movie-card:hover{
+    margin-top: 25vh;
+    margin-left: 5vh; /* Espacio entre las tarjetas */
+}
+.movie-card #cat_img{
+    padding: 0;
+    margin: 0;
+
+       
+}
+
+.movie-header {
+    height: 400px;
+    width: 100%;
+    max-height: 415px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.header-icon-container {
+    position: relative;
+}
+
+.header-icon {
+    width: 100%;
+    height: 300px;
+    line-height: 367px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 54px;
+    text-shadow: 0px 0px 20px #6abcea, 0px 5px 20px #6ABCEA;
+    opacity: .85;
+}
+
+.header-icon:hover {
+    background: rgba(0, 0, 0, .15);
+    font-size: 74px;
+    text-shadow: 0px 0px 20px #6abcea, 0px 5px 30px #6ABCEA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 1;
+    
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    background-color: #000000;
+    -webkit-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 18px 2px rgba(215, 215, 216, 0.884);
+    
+}
+
+.movie-content {
+    padding: 18px 18px 24px 18px;
+    margin: 0;
+}
+
+.movie-content-header,
+.movie-info {
+    display: table;
+    width: 100%;
+}
+
+.movie-title {
+    font-size: 24px;
+    margin: 0;
+    display: table-cell;
+    
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background: rgb(7,5,70);
+    background: linear-gradient(180deg, rgba(7,5,70,1) 4%, rgba(2,2,23,1) 50%, rgba(7,5,70,1) 100%);
+    margin: 10vh auto;
+    padding: 20px;
+    
+    max-width: 80vh; /* Limitar el ancho máximo del modal al 90% del ancho de la pantalla */
+    max-height: 90vh; /* Limitar el alto máximo del modal al 90% del alto de la pantalla */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical si el contenido es más largo que el modal */
+    overflow-x: hidden; /* Ocultar el desplazamiento horizontal */
+}
+
+.modal-content video {
+    border: rgba(255, 255, 255, 0.37) 2px solid;
+    max-width: 100%; /* Asegurar que los videos se ajusten al ancho del modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        padding: 10px;
+    }
+
+    .movie-card{
+        margin-top: 30vh;
+        margin-bottom: 20px;
+
+
+
+
+        
+        
+    }
+    .modal-content {
+        max-width: 80vh; /* Reducir el ancho del modal al 95% del ancho de la pantalla en pantallas pequeñas */
+    }
+}
+@media (max-width: 500px) {
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        padding: 80px;
+        
+    }
+
+    .movie-card{
+        margin-top: 30vh;
+        margin-bottom: 20px;
+        
+    }
+    .modal-content {
+        max-width: 80vh; /* Reducir el ancho del modal al 95% del ancho de la pantalla en pantallas pequeñas */
+    }
+}

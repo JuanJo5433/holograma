@@ -1,0 +1,331 @@
+/* Importación de la fuente 'Arimo' desde Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700');
+
+/* Estilos para el cuerpo del documento */
+body {
+    height: 100%; /* Establece la altura del cuerpo al 100% del alto disponible */
+    width: 100%; /* Establece el ancho del cuerpo al 100% del ancho disponible */
+    font-family: 'Arimo', Arial, sans-serif; /* Establece la fuente del cuerpo con 'Arimo', Arial y sans-serif como alternativas */
+    font-weight: 400; /* Establece el grosor de fuente normal (400) para el cuerpo */
+    font-size: 14px; /* Establece el tamaño de fuente del cuerpo a 14px */
+    color: #ececec; /* Establece el color del texto del cuerpo */
+    margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+    padding: 0; /* Elimina los rellenos predeterminados del cuerpo */
+    box-sizing: border-box; /* Establece el modelo de caja 'border-box' para incluir el relleno y el borde en el ancho y alto del elemento */
+}
+
+/* Estilos para todos los elementos */
+* {
+    transition: 300ms; /* Agrega una transición de 300 milisegundos a todas las propiedades animables */
+    margin: 0; /* Elimina los márgenes predeterminados para todos los elementos */
+    padding: 0; /* Elimina los rellenos predeterminados para todos los elementos */
+    font-family: 'Arimo', Arial, sans-serif; /* Establece la fuente para todos los elementos con 'Arimo', Arial y sans-serif como alternativas */
+    box-sizing: border-box; /* Establece el modelo de caja 'border-box' para incluir el relleno y el borde en el ancho y alto del elemento */
+    color: #ffffff; /* Establece el color del texto para todos los elementos */
+}
+
+/* Estilo para listas desordenadas */
+ul {
+    list-style: none; /* Elimina los marcadores de lista predeterminados */
+}
+
+/* Estilo para enlaces */
+a {
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+}
+
+/* Estilo para enlaces al pasar el ratón por encima */
+a:hover {
+    color: #6ABCEA; /* Cambia el color del texto al pasar el ratón por encima del enlace */
+}
+
+/* Estilos para la barra de navegación */
+.nav {
+    display: flex; /* Muestra los elementos de la barra de navegación en una fila */
+    justify-content: space-between; /* Distribuye los elementos de la barra de navegación con espacio entre ellos */
+    align-items: center; /* Centra verticalmente los elementos de la barra de navegación */
+    background-color: #19087082; /* Establece el color de fondo de la barra de navegación con una opacidad reducida */
+    color: #fff; /* Establece el color del texto de la barra de navegación a blanco */
+    padding: 10px; /* Establece el relleno interno de la barra de navegación */
+    position: fixed; /* Fija la barra de navegación en la parte superior de la ventana al desplazarse */
+    top: 0; /* Coloca la barra de navegación en la parte superior del contenedor */
+    left: 0; /* Coloca la barra de navegación en la parte izquierda del contenedor */
+    bottom:0 ; /* Establece el límite inferior de la barra de navegación para que ocupe todo el alto disponible */
+    width: 100%; /* Establece el ancho de la barra de navegación al 100% del contenedor */
+    height: 60px; /* Establece la altura de la barra de navegación */
+    z-index: 999; /* Establece una alta capa z-index para asegurarse de que la barra de navegación esté por encima de otros elementos */
+    transition: all 0.3s ease; /* Agrega una transición suave a todas las propiedades con una duración de 0.3 segundos */
+}
+
+/* Estilo para el logo en la barra de navegación */
+.logo a {
+    font-size: 34px; /* Establece el tamaño de fuente del logo */
+    font-weight: bold; /* Establece el grosor de fuente como negrita */
+    color: #fff; /* Establece el color del texto del logo a blanco */
+    text-decoration: none; /* Elimina el subrayado del enlace del logo */
+    margin-left: 20px; /* Establece un margen a la izquierda del logo */
+}
+
+/* Estilo para el icono de menú desplegable en dispositivos móviles */
+.menu-icon {
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por el icono */
+    display: none; /* Inicialmente oculta el icono de menú en pantallas más grandes */
+}
+
+/* Estilo para las barras del icono de menú desplegable */
+.menu-icon .nav-icon {
+    width: 25px; /* Establece el ancho de cada barra del icono */
+    height: 3px; /* Establece la altura de cada barra del icono */
+    background-color: #fff; /* Establece el color de las barras del icono a blanco */
+    margin: 5px 0; /* Establece un margen en la parte superior e inferior de cada barra del icono */
+    transition: all 0.2s ease-in-out; /* Agrega una transición suave a todas las propiedades con una duración de 0.2 segundos */
+    left: 200px; /* Establece una posición inicial de las barras del icono en una posición no visible */
+}
+
+/* Estilo para el menú de navegación */
+.menu {
+    display: flex; /* Muestra los elementos del menú en una fila */
+    justify-content: flex-end; /* Coloca los elementos del menú en el extremo derecho */
+    margin-right: 40px; /* Establece un margen a la derecha del menú */
+}
+
+/* Estilo para cada ítem del menú */
+.menu li {
+    list-style: none; /* Elimina los marcadores de lista predeterminados para cada ítem del menú */
+    padding: 0 20px; /* Establece el relleno a la izquierda y derecha de cada ítem del menú */
+}
+
+/* Estilo para los enlaces del menú */
+.menu li a {
+    color: #fff; /* Establece el color del texto de los enlaces del menú a blanco */
+    text-decoration: none; /* Elimina el subrayado de los enlaces del menú */
+    position: relative; /* Agregamos posición relativa para los enlaces */
+    top: 13px; /* Ajusta la posición vertical de los enlaces para alinearlos con el logo */
+}
+
+/* Estilo para la línea de resaltado que se muestra al pasar el ratón por encima del enlace */
+.menu li a::after {
+    content: ''; /* Agrega un contenido vacío al pseudo-elemento ::after */
+    display: block; /* Convierte el pseudo-elemento en un bloque para que ocupe todo el ancho del enlace */
+    height: 2px; /* Establece la altura de la línea de resaltado */
+    width: 0; /* Inicialmente, la línea de resaltado no tiene ancho */
+    background-color: #6ABCEA; /* Establece el color de la línea de resaltado */
+    transition: width 0.2s ease; /* Agrega una transición suave al ancho de la línea de resaltado con una duración de 0.2 segundos */
+}
+
+/* Estilo para la línea de resaltado que se muestra al pasar el ratón por encima del enlace */
+.menu li a:hover::after {
+    width: 100%; /* Cuando se pasa el ratón por encima del enlace, la línea de resaltado ocupa todo el ancho del enlace */
+}
+
+/* Estilos para el botón de inicio de sesión */
+.login-button {
+    display: inline-block; /* Muestra el botón como un bloque en línea */
+    padding: 10px 20px; /* Establece el relleno del botón */
+    font-size: 18px; /* Establece el tamaño de fuente del botón */
+    font-weight: bold; /* Establece el grosor de fuente como negrita */
+    text-align: center; /* Centra el texto en el botón */
+    text-decoration: none; /* Elimina el subrayado del botón */
+    color: #ffffff; /* Establece el color del texto del botón a blanco */
+    background-color: #0076ff; /* Establece el color de fondo del botón */
+    border-radius: 5px; /* Establece la curvatura de los bordes del botón */
+    border: none; /* Elimina el borde del botón */
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo del botón con una duración de 0.3 segundos */
+}
+
+/* Estilo para el botón de inicio de sesión al pasar el ratón por encima */
+.login-button:hover {
+    background-color: #45A7D7; /* Cambia el color de fondo del botón al pasar el ratón por encima */
+    color: #151838; /* Cambia el color del texto del botón al pasar el ratón por encima */
+}
+
+/* Media query para pantallas pequeñas, como dispositivos móviles con un ancho máximo de 768px */
+@media (max-width: 768px) {
+    /* Oculta el menú en pantallas pequeñas */
+    .menu {
+        display: none;
+    }
+
+    /* Muestra el icono de menú desplegable en pantallas pequeñas */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Muestra el menú desplegable al activarlo */
+    .menu.active {
+        display: flex; /* Muestra los elementos del menú en una columna cuando el menú está activo */
+        flex-direction: column; /* Coloca los elementos del menú en una columna cuando el menú está activo */
+        position: absolute; /* Permite posicionar el menú desplegable */
+        top: 50px; /* Posición vertical del menú desplegable desde la parte superior */
+        right: 0; /* Posición horizontal del menú desplegable desde la derecha */
+        width: 200px; /* Ancho del menú desplegable */
+        background-color: #333; /* Color de fondo del menú desplegable */
+        z-index: 998; /* Capa z-index para asegurarse de que el menú desplegable esté por encima de otros elementos */
+    }
+
+    /* Estilo para cada ítem del menú desplegable */
+    .menu.active li {
+        padding: 15px 20px; /* Establece el relleno a la izquierda y derecha de cada ítem del menú desplegable */
+        border-bottom: 1px solid #555; /* Agrega una línea de separación entre los ítems del menú desplegable */
+    }
+
+    /* Animación del ícono de tres rayas al abrir el menú desplegable */
+    .menu-icon.active .nav-icon:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px); /* Rota la primera barra 45 grados en sentido contrario a las agujas del reloj y la desplaza */
+    }
+
+    .menu-icon.active .nav-icon:nth-child(2) {
+        opacity: 0; /* Oculta la segunda barra del icono al abrir el menú desplegable */
+    }
+
+    .menu-icon.active .nav-icon:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px); /* Rota la tercera barra 45 grados en sentido de las agujas del reloj y la desplaza */
+    }
+}
+
+/* Estilo para el contenedor */
+.container {
+    height: 100%; /* Establece la altura del contenedor al 100% del alto disponible */
+    background-color: #000000; /* Cambiar el color de fondo a negro */
+}
+
+/* Estilo para las tarjetas de películas */
+.movie-card {
+    background: #000000; /* Establece el color de fondo de las tarjetas de películas a negro */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, .1); /* Agrega una sombra suave a las tarjetas de películas */
+    width: 100%; /* Establece el ancho de las tarjetas de películas al 100% del contenedor padre */
+    max-width: 315px; /* Establece el ancho máximo de las tarjetas de películas */
+    margin: 2em; /* Establece el margen entre las tarjetas de películas */
+    border-radius: 10px; /* Establece la curvatura de los bordes de las tarjetas de películas */
+    display: inline-block; /* Muestra las tarjetas de películas en línea */
+    -webkit-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75); /* Agrega una sombra específica para navegadores webkit */
+    -moz-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75); /* Agrega una sombra específica para navegadores mozilla */
+    box-shadow: 0px 0px 18px 2px rgba(4, 10, 63, 0.884); /* Agrega una sombra para navegadores que no son webkit ni mozilla */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por la tarjeta */
+    margin-top: 70px; /* Ajusta la posición vertical de las tarjetas de películas */
+}
+
+/* Estilo para la parte superior de la tarjeta de películas */
+.movie-header {
+    height: 500px; /* Establece la altura de la parte superior de la tarjeta de películas */
+    width: 100%; /* Establece el ancho de la parte superior de la tarjeta de películas al 100% */
+    max-height: 415px; /* Establece la altura máxima de la parte superior de la tarjeta de películas */
+    border-top-left-radius: 10px; /* Establece la curvatura del borde superior izquierdo de la tarjeta de películas */
+    border-top-right-radius: 10px; /* Establece la curvatura del borde superior derecho de la tarjeta de películas */
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo para que cubra toda la parte superior de la tarjeta */
+    background-position: center; /* Centra la imagen de fondo en la parte superior de la tarjeta */
+}
+
+/* Estilo para el contenedor del ícono de encabezado de la tarjeta de películas */
+.header-icon-container {
+    position: relative; /* Permite posicionar el ícono de encabezado de manera relativa */
+}
+
+/* Estilo para el ícono de encabezado de la tarjeta de películas */
+.header-icon {
+    width: 100%; /* Establece el ancho del ícono de encabezado al 100% */
+    height: 300px; /* Establece la altura del ícono de encabezado */
+    line-height: 367px; /* Alinea verticalmente el texto dentro del ícono de encabezado */
+    text-align: center; /* Centra el texto dentro del ícono de encabezado */
+    vertical-align: middle; /* Alinea verticalmente el ícono de encabezado */
+    margin: 0 auto; /* Centra el ícono de encabezado horizontalmente */
+    color: #ffffff; /* Establece el color del texto del ícono de encabezado a blanco */
+    font-size: 54px; /* Establece el tamaño de fuente del ícono de encabezado */
+    text-shadow: 0px 0px 20px #6abcea, 0px 5px 20px #6ABCEA; /* Agrega sombra al texto del ícono de encabezado */
+    opacity: .85; /* Establece la opacidad del ícono de encabezado */
+}
+
+/* Estilo para el ícono de encabezado de la tarjeta de películas al pasar el ratón por encima */
+.header-icon:hover {
+    background: rgba(0, 0, 0, .15); /* Agrega un fondo semitransparente al ícono de encabezado al pasar el ratón por encima */
+    font-size: 74px; /* Aumenta el tamaño de fuente del ícono de encabezado al pasar el ratón por encima */
+    text-shadow: 0px 0px 20px #6abcea, 0px 5px 30px #6ABCEA; /* Agrega una sombra más pronunciada al texto del ícono de encabezado al pasar el ratón por encima */
+    border-top-left-radius: 10px; /* Establece la curvatura del borde superior izquierdo de la tarjeta de películas al pasar el ratón por encima */
+    border-top-right-radius: 10px; /* Establece la curvatura del borde superior derecho de la tarjeta de películas al pasar el ratón por encima */
+    opacity: 1; /* Establece la opacidad completa del ícono de encabezado al pasar el ratón por encima */
+}
+
+/* Estilo para la tarjeta de películas al pasar el ratón por encima */
+.movie-card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la tarjeta de películas al pasar el ratón por encima */
+    background-color: #000000; /* Establece el color de fondo de la tarjeta de películas al pasar el ratón por encima */
+    -webkit-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75); /* Agrega una sombra específica para navegadores webkit al pasar el ratón por encima */
+    -moz-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75); /* Agrega una sombra específica para navegadores mozilla al pasar el ratón por encima */
+    box-shadow: 0px 0px 18px 2px rgba(215, 215, 216, 0.884); /* Agrega una sombra para navegadores que no son webkit ni mozilla al pasar el ratón por encima */
+}
+
+/* Estilo para el contenido de la tarjeta de películas */
+.movie-content {
+    padding: 18px 18px 24px 18px; /* Establece el relleno interno del contenido de la tarjeta de películas */
+    margin: 0; /* Elimina los márgenes predeterminados del contenido de la tarjeta de películas */
+}
+
+/* Estilo para el encabezado del contenido y la información de la tarjeta de películas */
+.movie-content-header,
+.movie-info {
+    display: table; /* Muestra los elementos como tablas para alinearlos horizontalmente */
+    width: 100%; /* Establece el ancho del contenido y la información de la tarjeta de películas al 100% */
+}
+
+/* Estilo para el título de la película */
+.movie-title {
+    font-size: 24px; /* Establece el tamaño de fuente del título de la película */
+    margin: 0; /* Elimina los márgenes predeterminados del título de la película */
+    display: table-cell; /* Muestra el título de la película como celda de tabla para alinearlo verticalmente */
+}
+
+/* Estilo para el modal */
+.modal {
+    display: none; /* Inicialmente oculta el modal */
+    position: fixed; /* Permite posicionar el modal de manera fija */
+    z-index: 1; /* Establece una capa z-index para asegurarse de que el modal esté por encima de otros elementos */
+    left: 0; /* Posición horizontal del modal desde la izquierda */
+    top: 0; /* Posición vertical del modal desde la parte superior */
+    width: 100%; /* Establece el ancho del modal al 100% */
+    height: 100%; /* Establece la altura del modal al 100% */
+    background-color: rgba(0, 0, 0, 0.8); /* Establece un fondo semitransparente para el modal */
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+    background: rgb(7,5,70); /* Establece un fondo degradado para el contenido del modal */
+    margin: 10vh auto; /* Ajusta el margen vertical del contenido del modal */
+    padding: 20px; /* Establece el relleno interno del contenido del modal */
+    width: 80%; /* Establece el ancho del contenido del modal al 80% */
+    max-width: 600px; /* Limitar el ancho máximo del contenido del modal */
+    height: auto; /* Establece la altura del contenido del modal de acuerdo al contenido */
+    max-height: 1090vh; /* Limitar el alto máximo del contenido del modal */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical si el contenido es más largo que el modal */
+    overflow-x: auto; /* Habilitar el desplazamiento horizontal si el contenido es más ancho que el modal */
+}
+
+/* Estilo para los videos dentro del contenido del modal */
+.modal-content video{
+    border: rgba(255, 255, 255, 0.37)  2px solid; /* Agrega un borde semitransparente alrededor del video */
+}
+
+/* Estilo para el botón de cierre del modal */
+.close {
+    color: #aaa; /* Establece el color del texto del botón de cierre a un tono de gris */
+    float: right; /* Alinea el botón de cierre a la derecha */
+    font-size: 28px; /* Establece el tamaño de fuente del botón de cierre */
+    font-weight: bold; /* Establece el grosor de fuente como negrita */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por el botón de cierre */
+}
+
+/* Estilo para el botón de cierre del modal al pasar el ratón por encima */
+.close:hover,
+.close:focus {
+    color: black; /* Cambia el color del texto del botón de cierre al pasar el ratón por encima */
+    text-decoration: none; /* Elimina el subrayado del botón de cierre al pasar el ratón por encima */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por el botón de cierre */
+}
+
+/* Estilo para el pie de página */
+.footer {
+    background-color: #010313; /* Establece el color de fondo del pie de página */
+    color: #fff; /* Establece el color del texto del pie de página a blanco */
+    text-align: center; /* Centra el texto del pie de página */
+    height: 20px; /* Establece la altura del pie de página */
+    font-size: 14px; /* Establece el tamaño de fuente del pie de página */
+}

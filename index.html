@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Declaration of document type as HTML and specification of the language in English -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Character encoding set to UTF-8 to support special characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport configuration for mobile devices -->
+    <title>MOVIE CINEMA</title>
+    <!-- Page title in the navigation bar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-d37QT0kW8DTW1Fv3fCaw45/k5GGq1caRo7IGBtELgj09Oq5K4DaaA4oywRs7vemqi29dSTb2BCnJeI2ErsLvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link to the "all.min.css" style sheet from Font Awesome for icons -->
+    <link rel="stylesheet" type="text/css" href="styles/style_index.css">
+    <!-- Link to the custom style sheet "style.css" in the "css" folder -->
+    <meta name="author" content="Juan Jose Giraldo">
+    <!-- Metadata specifying the author of the page -->
+    <link rel="icon" href="img/logo.png">
+    <!-- Link to the icon that will appear in the browser tab -->
+</head>
+<body>
+
+    <!-- scroll bar -->
+
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Section that wraps the entire page content -->
+        <!-- Main cover -->
+        <div class="main-cover">
+            <!-- Section of the main cover -->
+            <video id="video" loop autoplay preload muted>
+                <!-- Video tag with attributes loop (repeat), autoplay (start automatically), preload (preload), and muted (muted) -->
+                <source src="videos/fonde_index.mp4" type='video/mp4' />
+                <!-- Video source with its path and file type -->
+            </video>
+            <!-- Closed video tag -->
+            <!-- Text "MOVIES360" with glitch effect -->
+            <div class="glitch-text">
+                <!-- Tag for text with glitch effect -->
+                Projections360
+                <!-- Content of the text -->
+            </div>
+            <!-- Closed tag for text with glitch effect -->
+        </div>
+        <!-- Closed tag for the main cover -->
+        <!-- NAVIGATION -->
+        <div class="nav">
+            <div class="logo">
+                <a href="#">Projections360</a>
+            </div>
+            <div class="menu-icon">
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="holograms/holograms.html">Holograms</a></li>
+                <a href="../login/login.html" class="login-button">Login</a>
+            </ul>
+        </div>
+        <!-- Closed navigation section -->
+        <script src="js/script.js"></script>
+       
+       
+</body>
+</html>
+<!-- Closing HTML document -->
